@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Class Inheritance</h2>
+    <p id="details"></p>
+    
+    <script>
+        class Car {
+            constructor(brand) { this.brand = brand; }
+            present() { return "I have a " + this.brand; }
+            static category() { return "Vehicle"; }
+        }
+
+        class Model extends Car {
+            constructor(brand, model) { super(brand); this.model = model; }
+            show() { return this.present() + ", it is a " + this.model; }
+        }
+
+        const myCar = new Model("Mercedes", "McLaren");
+        document.getElementById("details").innerHTML =
+            Car.category() + "<br>" + myCar.show();
+    </script>
+</body>
+</html>
